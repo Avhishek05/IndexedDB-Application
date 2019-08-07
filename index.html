@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IndexedDB test</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<!-- Angular Material requires Angular.js Libraries -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-animate.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-aria.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-messages.min.js"></script>
+
+	<!-- Angular Material Library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<script src="indexdbservices.js"></script>
+	<script src="underscore-min.js"></script>
+	<!-- <script type="text/javascript" src="app.util.js"></script> -->
+</head>
+<body ng-app="app" ng-controller="indexDBtest">
+	 <article class="media content-section" ng-cloak>
+	 	<table class="table" ng-if="eng_data && japan_data && russia_data">
+  <thead>
+    <tr>
+      <th scope="col">country</th>
+      <th scope="col">max temprature</th>
+      <th scope="col">min temprature</th>
+      <th scope="col">humidity</th>
+    </tr>
+  </thead>
+  <tbody>
+		    <tr>
+		      <td scope="row">{{eng_data.name}}</td>
+		      <td>{{eng_data.main.temp_max}} </td>
+		      <td>{{eng_data.main.temp_min}}</td>
+		      <td>{{eng_data.main.humidity}}</td>
+		    </tr>
+		    <tr>
+		          <td scope="row">{{japan_data.city.name}}</td>
+		      <td>{{japan_data.list[0].main.temp_max}} </td>
+		      <td>{{japan_data.list[0].main.temp_min}}</td>
+		      <td>{{japan_data.list[0].main.humidity}}</td>
+		    </tr>
+		    <tr>
+		         <td scope="row">{{russia_data.city.name}}</td>
+		      <td>{{russia_data.list[0].main.temp_max}} </td>
+		      <td>{{russia_data.list[0].main.temp_min}}</td>
+		      <td>{{russia_data.list[0].main.humidity}}</td>
+		    </tr>
+    
+  </tbody>
+</table>
+
+		
+</article>
+ <article class="media content-section" ng-hide="eng_data && japan_data && russia_data"
+  style="margin-left: 613px;margin-top: 300px;">
+ 	<div class="spinner-grow">
+ 	</article>
+
+</div>
+</body>
+</html>
+
